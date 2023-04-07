@@ -52,6 +52,7 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/panel-admin/simpan-data-anggota',[AnggotaController::class,'simpanAnggota']);
         Route::get('/panel-admin/edit-anggota-{no}',[AnggotaController::class,'viewEdit']);
         Route::post('/panel-admin/update-anggota-{no}',[AnggotaController::class,'updateAnggota']);
+        Route::post('/panel-admin/hapus-data-anggota-{id}',[AnggotaController::class,'hapusAnggota']);
         Route::get('/panel-admin/tambah-peminjaman',[PeminjamanController::class,'viewTambahPeminjaman']);
         Route::get('/panel-admin/peminjaman',[PeminjamanController::class,'viewPeminjaman'])->name('viewPeminjaman');
         Route::post('/panel-admin/simpan-peminjaman',[PeminjamanController::class,'simpanPeminjaman']);

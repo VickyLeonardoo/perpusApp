@@ -29,7 +29,7 @@ class AnggotaController extends Controller
     {
         $lastRow = Anggota::latest('id')->first();
         if (!$lastRow) {
-            $lastRow = 0;
+            $lastRows = 0;
         }else{
             $lastRows = $lastRow->id ;
         }
@@ -39,11 +39,12 @@ class AnggotaController extends Controller
         // $noAnggotaPlus = 'A'.$lastRow + 1;
 
         $request->validate([
-            'nim' => 'required',
+            'nim' => 'required|unique:anggotas,nim',
             'nama' => 'required',
             'tglLahir' => 'required',
             'agama' => 'required',
         ], [
+            'nim.unique' => 'Nim Telah Digunakan',
             'nim.required' => 'Nim Harus Diisi',
             'nama.required' => 'Nama Harus Diisi',
             'tglLahir.required' => 'Tanggal Lahir Harus Diisi',
@@ -111,5 +112,10 @@ class AnggotaController extends Controller
 
         Anggota::where('noAnggota', $no)->update($data);
         return redirect()->back()->withToastSuccess('Data Anggota Berhasil Disimpan');
+    }
+
+    public function hapusAnggota($id){
+        Anggota::where('id',$id)->delete();
+        return redirect()->back()->withToastSuccess('Anggota Berhasil Dihapus');
     }
 }

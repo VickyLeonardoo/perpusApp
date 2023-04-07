@@ -63,10 +63,10 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form action="/panel-admin/hapus-data-buku-{{ $data->id }}" method="POST">
+                    <form action="/panel-admin/hapus-data-anggota-{{ $data->id }}" method="POST">
                         @csrf
                     <div class="modal-body">
-                        Ingin Menghapus Buku <strong>{{ $data->nama }}</strong>?
+                        Ingin Menghapus Anggota <strong>{{ $data->nama }}</strong>?
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>

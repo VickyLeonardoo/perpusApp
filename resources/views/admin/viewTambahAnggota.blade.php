@@ -7,15 +7,15 @@
                     @csrf
                     <div class="form-group">
                         <label for="">NIM:</label>
-                        <input type="text" class="form-control" value="{{ old('judul') }}" name="nim" placeholder="Masukkan Nim">
+                        <input type="text" class="form-control" value="{{ old('nim') }}" name="nim" placeholder="Masukkan Nim">
                     </div>
                     <div class="form-group">
                         <label for="">Nama:</label>
-                        <input type="text" class="form-control" value="{{ old('tglTerbit') }}" name="nama" placeholder="Masukkan Nama">
+                        <input type="text" class="form-control" value="{{ old('nama') }}" name="nama" placeholder="Masukkan Nama">
                     </div>
                     <div class="form-group">
                         <label for="">Tanggal Lahir:</label>
-                        <input type="date" class="form-control" value="{{ old('pengarang') }}" name="tglLahir">
+                        <input type="date" class="form-control" value="{{ old('tglLahir') }}" name="tglLahir">
                     </div>
                     <div class="form-group">
                         <label for="">Agama:</label>
